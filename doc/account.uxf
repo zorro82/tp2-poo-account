@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>110</x>
+      <y>240</y>
+      <w>410</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>Account
+--
+- iban: String
+- balance: int
+- overdraftAuthorization: int
+--
++ constructeur
++ getters
++ setters
++ toString(): 
+
++ addMoney(amount: int): int
++ removeMoney(amount: int): int
++ transfer(otherAccount: Account, amount: int): void
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>710</x>
+      <y>220</y>
+      <w>350</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>Customer
+--
+- id: int
+- firstName: String
+- lastName: String
+--
++ constructeur
++ getId(): int
++ getFirstName(): String
++ getLastName(): String
++ toString(): String
+
++ setFirstName(String firstName): void
++ setLastName(String lastName): void
++ addAccount(account: Account): void
++ removeAccount(account: Account): boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>310</y>
+      <w>220</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=0..n
+&lt; owns</panel_attributes>
+    <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>110</x>
+      <y>580</y>
+      <w>410</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>Account
+--
+- iban: String
+- balance: int
+- overdraftAuthorization: int
+--
++ constructeur
++ getters
++ setters
++ toString(): 
+
++ addMoney(amount: int): int
++ removeMoney(amount: int): int
++ transfer(otherAccount: Account, amount: int): void
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>710</x>
+      <y>560</y>
+      <w>350</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>Customer
+--
+- id: int
+- firstName: String
+- lastName: String
+--
++ constructeur
++ getId(): int
++ getFirstName(): String
++ getLastName(): String
++ setFirstName(String firstName): void
++ setLastName(String lastName): void
++ toString(): String
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
