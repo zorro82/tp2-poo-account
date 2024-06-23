@@ -5,4 +5,5 @@ package fr.afpa.account;
  */
 public class Account {    
     // TODO à compléter
+
 }

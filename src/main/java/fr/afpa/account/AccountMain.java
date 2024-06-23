@@ -1,8 +1,5 @@
 package fr.afpa.account;
 
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-
 /**
  * Classe principale du projet, contient la fonction "main"
  */
@@ -22,3 +19,4 @@ class AccountMain
 	}
 }
 
+ 

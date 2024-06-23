@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>110</x>
-      <y>240</y>
+      <x>230</x>
+      <y>20</y>
       <w>410</w>
       <h>230</h>
     </coordinates>
@@ -31,8 +31,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>710</x>
-      <y>220</y>
+      <x>830</x>
+      <y>0</y>
       <w>350</w>
       <h>260</h>
     </coordinates>
@@ -58,8 +58,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>510</x>
-      <y>310</y>
+      <x>630</x>
+      <y>90</y>
       <w>220</w>
       <h>50</h>
     </coordinates>
@@ -72,8 +72,8 @@ m2=0..n
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>110</x>
-      <y>580</y>
+      <x>230</x>
+      <y>360</y>
       <w>410</w>
       <h>230</h>
     </coordinates>
@@ -99,8 +99,8 @@ m2=0..n
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>710</x>
-      <y>560</y>
+      <x>830</x>
+      <y>340</y>
       <w>350</w>
       <h>260</h>
     </coordinates>
@@ -121,5 +121,104 @@ m2=0..n
 
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>1110</y>
+      <w>410</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>Account
+--
+- iban: String
+- balance: int
+- overdraftAuthorization: int
+
+--
++ constructeur
++ getters
++ setters
++ toString(): String
+
++ addMoney(amount: int): int
++ removeMoney(amount: int): int
++ transfer(otherAccount: Account, amount: int): void
+
+_+ checkIban(): boolean_
+
+--
+Résponsabilités :
+-- gère les opération sur un compte bancaire
+-- gère les transaction entre différents comptes
+-- vérifie des informations de compte bancaire
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>700</y>
+      <w>410</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>Account
+--
+- iban: String
+- balance: int
+- overdraftAuthorization: int
+
+--
++ constructeur
++ getters
++ setters
++ toString(): String
+
++ addMoney(amount: int): int
++ removeMoney(amount: int): int
++ transfer(otherAccount: Account, amount: int): void
+
++ checkIban(): boolean
+
+--
+Responsabilités :
+--	représente un compte bancaire 
+-- gère les retraits et ajouts d'argent sur un compte bancaire
+-- gère les transactions entre différents comptes
+-- vérifie des informations de compte bancaire
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>710</x>
+      <y>1300</y>
+      <w>200</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+Représentation UML 
+d'une méthode "static"
+-&gt; elle doit être soulignée</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>370</x>
+      <y>1330</y>
+      <w>360</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;30.0;340.0;10.0</additional_attributes>
   </element>
 </diagram>
