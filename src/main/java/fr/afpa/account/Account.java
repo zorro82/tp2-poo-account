@@ -149,26 +149,44 @@ numericIban convertit chaque caractère en une valeur numérique.
 mod97 est utilisée pour vérifier la validité de l'IBAN.
         */
     public static boolean checkIban(String stringToCheck) {
+        // vérification de la taille de la chaîne de caractères passée en paramètre
         if (stringToCheck == null || stringToCheck.length() < 15 || stringToCheck.length() > 34) {
             return false;
         }
+
+        // re-arrangement de la chaîne de caractères correspondant à l'IBAN
+        // --> 4 premiers caratères à la fin
         String rearranged = stringToCheck.substring(4) + stringToCheck.substring(0, 4);
+
         StringBuilder numericIban = new StringBuilder();
         for (char c : rearranged.toCharArray()) {
+            // récupération de la valeur numérique d'un caractère donné
+            // particularité !!!!! --> si le caractère est une lettre, la valeur numérique convient à l'algorithme de l'IBAN
+            // exemple : 'A' -> 10, 'B' -> 11, 'C' -> 12.........
             int numericValue = Character.getNumericValue(c);
+
+            // vérification afin de voir si la valeur est bien comprise en 0 et 35 (car Z -> 35)
             if (numericValue < 0 || numericValue > 35) {
                 return false;
             }
+            // ajout de la valeur sous forme de chaîne de caractère pour obtenir l'IBAN transformé 
             numericIban.append(numericValue);
         }
+        // on calcule le modulo et on renvoie vrai si le reste est égal à 1
+        // VRAI = l'IBAN est correct
         return mod97(numericIban.toString()) == 1;
     }
 
     /*
-        * 8.	Méthode mod97:
-        * Calcule le reste de la division de la chaîne de caractères convertie par 97.
-        */
+    * 8.	Méthode mod97:
+    * Calcule le reste de la division de la chaîne de caractères convertie par 97.
+    */
     private static int mod97(String input) {
+        // autre solution pour faire un module à partir d'un nombre sous forme de chaîne de caractères
+        // 1. création d'un objet de la classe BigInteger à partir de la chaîne (qui représente un GROS ENTIER)
+        // 2. utilisation de la méthode de calcul du module de BigInteger : https://www.geeksforgeeks.org/biginteger-mod-method-in-java/
+
+        // Solution correcte aussi
         int checksum = 0;
         for (int i = 0; i < input.length(); i++) {
             checksum = (checksum * 10 + (input.charAt(i) - '0')) % 97;

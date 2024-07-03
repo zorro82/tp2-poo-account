@@ -24,8 +24,10 @@ public class AccountMain
 		/*
 		 * Crée une instance de la classe Customer avec le nom "John Doe".
 		 */
-		Customer customer = new Customer("John Doe");
+		Customer customer = new Customer(1, "John", "Doe");
 		
+
+
 		// Ajouter un ou plusieurs objet de "Account" à des "Customer"
 		// Association des comptes au client
 		/*
@@ -125,14 +127,14 @@ public class AccountMain
 		// 2.2.4	La classse ArrayList
 		System.out.println("\n----- 2.2.4\tLa classe ArrayList  -----");
 		// Instanciation d'une ArrayList de Customer
-        ArrayList<Customer> customerss = new ArrayList<>();
+        ArrayList<Customer> customers = new ArrayList<>();
 		// Création de clients
         Customer customer6 = new Customer(1, "John", "Doe");
         Customer customer7 = new Customer(2, "Jane", "Smith");
 
         // Ajout de clients à la liste
-        customerss.add(customer6);
-        customerss.add(customer7);
+        customers.add(customer6);
+        customers.add(customer7);
 
         // Création de comptes
         Account account6 = new Account("FR7630001007941234567890185", 5000, 1000);
@@ -143,9 +145,11 @@ public class AccountMain
         customer7.addAccount(account6);
 
         // Affichage des clients et de leurs comptes
-        for (Customer customers : customers) {
-            System.out.println(customers);
-            customers.displayAccounts();
+        for (Customer customerLoop : customers) {
+			// affichage es information avec "println"
+            System.out.println(customerLoop);
+			// affichage des informations de compte
+            customerLoop.displayAccounts();
         }
 
         // Suppression d'un compte
@@ -153,9 +157,9 @@ public class AccountMain
 
         // Affichage après suppression
         System.out.println("Après suppression d'un compte:");
-        for (Customer customer : customers) {
-            System.out.println(customer);
-            customer.displayAccounts();
+        for (Customer client : customers) {
+            System.out.println(client);
+            client.displayAccounts();
         }
     }
 }

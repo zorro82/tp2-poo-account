@@ -39,10 +39,10 @@ public class Customer {
      * (name) avec la valeur passée en paramètre et crée une nouvelle liste
      * vide pour les comptes (accounts).
      */
-    /*public Customer(String name) {
-        this.name = name;
-        this.accounts = new ArrayList<>();
-    }*/
+    // public Customer(String name) {
+    //     this.firstName = name;
+    //     this.accounts = new ArrayList<>();
+    // }
 
     /*
      * pour l'identifiant, le prénom et le nom de famille. Ensuite, nous devons
